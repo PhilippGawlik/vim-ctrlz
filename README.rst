@@ -1,12 +1,13 @@
-# Ctrl-z plugin
+Ctrl-z plugin
+=======
 
-This plugin mimics the behavior of terminal based NVim/Vim8's `<Ctrl-z>` command by using the NVim/Vim8's internal terminal buffer instead of the global commandline.
+This plugin mimics the behavior of terminal based NeoVim's `<Ctrl-z>` command by using the NeoVim's internal terminal buffer instead of the global commandline.
 
-Without this plugin: `<Ctrl-z>` hotkey is commonly used to temporary make current NVim/Vim process a background process while executing a vim command on the commandline.
+Without this plugin: `<Ctrl-z>` hotkey is commonly used to temporary make current NeoVim process a background process while executing a vim command on the commandline.
 
-With this plugin: `<Ctrl-z>` hotkey opens NVim/Vim8 internal terminal buffer in insert mode. If `<Ctrl-z>` is hit again that last active buffer is open again.
+With this plugin: `<Ctrl-z>` hotkey opens NeoVim internal terminal buffer in insert mode. If `<Ctrl-z>` is hit again that last active buffer is open again.
 
-### Todo
+#### Todo
 
 * Full screen terminal mode
 
@@ -14,9 +15,15 @@ With this plugin: `<Ctrl-z>` hotkey opens NVim/Vim8 internal terminal buffer in 
 
 ### Installation
 
-### Tested for
-
-1. NVIM v0.4.2
+Place this in your `init.vim`:
+```
+Plug 'philippgawlik/vim-ctrlz'
+```
+... then run the following  in NeoVim:
+```
+:source %
+:PlugInstall
+```
 
 ### Features & Configuration
 
@@ -28,8 +35,9 @@ With this plugin: `<Ctrl-z>` hotkey opens NVim/Vim8 internal terminal buffer in 
 
 	`tnoremap <C-z> <C-\><C-n>:call JumpToPreviousBuffer()<CR>`
 
-## Requirements
+### Tested for
 
-None
+1. NeoVim v0.4.2
+### Requirements
 
-## Author & Feedback
+* NeoVim (Todo: further specify)
