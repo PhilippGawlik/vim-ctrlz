@@ -1,20 +1,17 @@
-Ctrl-z plugin
-=======
+# Ctrl-z plugin
 
-This plugin mimics the behavior of terminal based NeoVim's `<Ctrl-z>` command by using the NeoVim's internal terminal buffer instead of the global commandline.
+This plugin mimics the behavior of terminal based NeoVim's `Ctrl-z` command by using the NeoVim's internal terminal buffer instead of the global commandline.
 
-Without this plugin: `<Ctrl-z>` hotkey is commonly used to temporary make current NeoVim process a background process while executing a vim command on the commandline.
+Without this plugin: `Ctrl-z` hotkey is commonly used to temporary make current NeoVim process a background process while executing a vim command on the commandline.
 
-With this plugin: `<Ctrl-z>` hotkey opens NeoVim internal terminal buffer in insert mode. If `<Ctrl-z>` is hit again that last active buffer is open again.
+With this plugin: `Ctrl-z` hotkey opens NeoVim internal terminal buffer in insert mode. If `Ctrl-z` is hit again that last active buffer is open again.
 
 **Todo**
 
-- [ ] Full screen terminal mode
-- [ ] Better screen messages
-- [ ] Further testing
+-  [ ] Full screen terminal mode
+-  [ ] Better screen messages
+-  [ ] Further testing
 
-
-# Installation and Documentation
 
 ## Installation
 
@@ -31,7 +28,7 @@ Plug 'philippgawlik/vim-ctrlz'
 :PlugInstall
 ```
 
-### Features & Configuration
+## Features & Configuration
 
 * key-binding to open/change to terminal buffer (replace `<C-z>` by whatever hotkey you like):
 
@@ -45,9 +42,10 @@ nnoremap <C-z> :call ControlZ("terminal")<CR>
 tnoremap <C-z> <C-\><C-n>:call JumpToPreviousBuffer()<CR>
 ```
 
-### Tested for
+## Tested for
 
 1. NeoVim v0.4.2
-### Requirements
+
+## Requirements
 
 * NeoVim
