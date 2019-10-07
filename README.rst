@@ -7,19 +7,25 @@ Without this plugin: `<Ctrl-z>` hotkey is commonly used to temporary make curren
 
 With this plugin: `<Ctrl-z>` hotkey opens NeoVim internal terminal buffer in insert mode. If `<Ctrl-z>` is hit again that last active buffer is open again.
 
-#### Todo
+**Todo**
 
-* Full screen terminal mode
+- [ ] Full screen terminal mode
+- [ ] Better screen messages
+- [ ] Further testing
 
-## Installation and Documentation
 
-### Installation
+# Installation and Documentation
+
+## Installation
 
 Place this in your `init.vim`:
+
 ```
 Plug 'philippgawlik/vim-ctrlz'
 ```
+
 ... then run the following  in NeoVim:
+
 ```
 :source %
 :PlugInstall
@@ -29,15 +35,19 @@ Plug 'philippgawlik/vim-ctrlz'
 
 * key-binding to open/change to terminal buffer (replace `<C-z>` by whatever hotkey you like):
 
-	`nnoremap <C-z> :call ControlZ("terminal")<CR>`
+```
+nnoremap <C-z> :call ControlZ("terminal")<CR>
+```
 
 * key-bind to jump back from terminal buffer to last buffer (or stay if no other buffer available)
 
-	`tnoremap <C-z> <C-\><C-n>:call JumpToPreviousBuffer()<CR>`
+```
+tnoremap <C-z> <C-\><C-n>:call JumpToPreviousBuffer()<CR>
+```
 
 ### Tested for
 
 1. NeoVim v0.4.2
 ### Requirements
 
-* NeoVim (Todo: further specify)
+* NeoVim
