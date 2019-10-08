@@ -12,6 +12,7 @@ With this plugin: `Ctrl-z` hotkey opens NeoVim internal terminal buffer in inser
 -  [ ] Better screen messages
 -  [ ] Further testing
 -  [ ] Add documentation
+-  [ ] Prevent nvim recursion
 
 
 ## Installation
