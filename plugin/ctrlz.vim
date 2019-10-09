@@ -1,3 +1,34 @@
+function! FindPatternOnCurrentLine(Pattern)
+  return search(a:Pattern, 'bn', line('.')-1)
+endfunction
+
+function! AskForPermissionYesNo(question)
+  let answer = input(a:question)
+  if answer == "y"
+    return 1
+  elseif answer == "n"
+    return 0
+  else
+    return AskForPermissionYesNo(a:question)
+endfunction
+
+function! NestedVimWarning()
+  let Pattern = "vim"
+  if FindPatternOnCurrentLine(Pattern)
+    let Question = "Looks like you are about to open vim in vim. Proceed? (y/n)"
+    if AskForPermissionYesNo(Question)
+      return 1
+    else
+      echom "Ignoring command execution because of user decision"
+      return 0
+    endif
+  else
+    return 1
+  endif
+endfunction
+
+tnoremap <expr> <CR> NestedVimWarning() ? '<CR>' : ''
+
 function! ThisIsOnlyOpenBuffer()
     let numberOfOpenBuffers = len(getbufinfo({'bufloaded': 1}))
     return numberOfOpenBuffers <= 1
