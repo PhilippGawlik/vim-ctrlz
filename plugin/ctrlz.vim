@@ -35,8 +35,8 @@ function! ControlZ(buffername)
 " Go to the last active buffer if current buffer is not the only buffer
 function! JumpToPreviousBuffer()
     if ThisIsOnlyOpenBuffer()
-        echomsg 'This is the only open buffer! Staying here.'
-        silent execute 'startinsert'
+        echom 'This is the only open buffer! Opening new one.'
+        silent execute ':enew'
     else
         silent execute ':b #'
     endif
